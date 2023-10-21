@@ -1,0 +1,51 @@
+Certainly! Here's a simple C++ program that computes the grade for 6 subjects based on user input:
+
+```cpp
+#include <iostream>
+#include <string>
+
+int main() {
+    // Declare variables to store subject names and marks
+    std::string subjects[6];
+    double marks[6];
+
+    // Get user input for subject names and marks
+    for (int i = 0; i < 6; i++) {
+        std::cout << "Enter the name of subject " << i + 1 << ": ";
+        std::cin >> subjects[i];
+
+        std::cout << "Enter the marks for " << subjects[i] << ": ";
+        std::cin >> marks[i];
+    }
+
+    // Calculate the total marks and average
+    double totalMarks = 0;
+    for (int i = 0; i < 6; i++) {
+        totalMarks += marks[i];
+    }
+    double average = totalMarks / 6;
+
+    // Determine the grade based on the average
+    char grade;
+    if (average >= 90) {
+        grade = 'A';
+    } else if (average >= 80) {
+        grade = 'B';
+    } else if (average >= 70) {
+        grade = 'C';
+    } else if (average >= 60) {
+        grade = 'D';
+    } else {
+        grade = 'F';
+    }
+
+    // Display the results
+    std::cout << "Total Marks: " << totalMarks << std::endl;
+    std::cout << "Average Marks: " << average << std::endl;
+    std::cout << "Grade: " << grade << std::endl;
+
+    return 0;
+}
+```
+
+This program allows the user to input the names and marks for 6 subjects, calculates the total marks, average, and assigns a grade based on the average.
